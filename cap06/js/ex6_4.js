@@ -26,3 +26,36 @@ frm.btListar.addEventListener("click", () =>{
     }
     resp.innerText = lista;
 })
+
+frm.btResumir.addEventListener("click", () =>{
+    if (criancas.length == 0) {
+        alert("Não há crianças na lista")
+        return
+    }
+    const copia = [...criancas]; // cria cópia do vetor crianças
+
+    copia.sort((a,b) => a.idade - b.idade)
+    let resumo = ""
+    let aux = copia[0].idade
+    
+    let nomes = []
+    for (const crianca of copia){
+        const {nome, idade} = crianca;
+        if (idade==aux){
+            nomes.push(nome)
+        }
+        else { // senão, monta o resumo para cada idade
+            resumo += aux + " ano(s): " + nomes.length + " criança(s) - "
+            resumo += ((nomes.length / copia.length) * 100).toFixed(2) + "%\n"
+            resumo += "(" + nomes.join(",") + ")\n\n"
+            aux = idade //obtém a nova idade na ordem
+            nomes = [] //limpa o vetor dos nomes
+            nomes.push(nome)
+        }
+    }
+    //adiciona a última criança
+    resumo +=  aux + " ano(s):" + nomes.length + " criança(s) - "
+    resumo += ((nomes.length / copia.length) *100) + "%\n"
+    resumo += "(" + nomes.join(",") + ")\n\n"
+    resp.innerText = resumo
+})
