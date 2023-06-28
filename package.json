@@ -1,0 +1,17 @@
+{
+  "name": "livrojs",
+  "version": "1.0.0",
+  "description": "Este repositório contém uma coleção de exemplos de código que acompanham o livro \"Lógica de Programação e Algoritmos com Javascript\". \r Os exemplos fornecidos aqui foram realizados para ajudar no aprendizado e na prática de conceitos fundamentais de lógica de programação e \r algoritmos utilizando a linguagem de programação Javascript. O livro possui exemplos prontos de conceitos tanto quanto de",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }, 
+  "dependencies": {
+  "prompt-sync": "^4.2.0"
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+ 
+
+}
